@@ -1,0 +1,35 @@
+<video  id="MeuVideo" width="800" controls controlsList="nodownload">
+
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu navegador de internet não suporta o vídeo. Seu fudido kkkkkkkkkk brinks
+    
+</video>
+
+<div wm-progresso="MeuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="MeuVideo">Play</button>
+    <button wm-pause="MeuVideo"></button>
+</div>
+
+<style>
+
+    .progresso{
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progresso > div {
+        background-color: red;
+        color: white;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+
+</style>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+            font-size: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+</head>
+<body>
+    <header>
+        <h1>EXERCÍCIOS HTML</h1>
+    </header>
+
+    <nav>
+        <a href="exercicios/opcao1.html"> 01 - Tags mais usadas</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/opcao2.html"> 02 - Rato</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/opcao3.html"> 03 - Outras tags</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/listas.html"> 04 - Listinhas</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/listaAninhada.html"> 05 - Listinhas Aninhadas</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/links.html"> 06 - Links</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/tabela.html"> 07 - Tabelas</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/form/form.html"> 08 - Formulário</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/images.html"> 09 - Imagens</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/video.html"> 10 - Vídeos</a> &nbsp;&nbsp;&nbsp;
+        <a href="exercicios/tagsNaoVisuais.html"> 11 - Tags Não Visuais</a> &nbsp;&nbsp;&nbsp;
+    </nav>
+
+    <section section id='conteudo'></section>
+    <footer> <br> Curso de web moderno</footer>
+
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+            link.onclick = function(e){
+                e.preventDefault()
+                fetch(link.href)
+                    .then(resp => resp.text())
+                    .then(html => {
+                        conteudo.innerHTML = html
+                        if (link.href.endsWith('tabela.html')) {
+                            const resultado = 50000 + 100;
+                            document.getElementById('resultado').textContent = `R$ ${resultado},00`;
+                        }
+
+                        // Script que expande as pastas na lista aninhada
+                        document.querySelectorAll('[wm-folder]').forEach(folder => {
+                            folder.onclick = function (e){
+                                console.log('teste')
+                                const ul = folder.nextElementSibling
+                                const display = ul.style.display
+                                ul.style.display = display == 'none' ? 'block' : 'none'
+                            }
+                        })
+                    })
+            }
+        })
+    </script>
+</body>
+</html>
