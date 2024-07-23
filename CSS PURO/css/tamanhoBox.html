@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tamanho Box</title>
+    <style>
+
+        * {
+            box-sizing: border-box; /* Faz com que o padding e a borda não aumentem o tamanho do box */
+            /* essa propriedade é mt broken na moral, tá no meta 100%, absurdo de forte, porém ela não é hereditária, por isso é preciso colocar ela nesse seletor universal */
+        }
+
+        body {
+            font-size: 45px;
+            margin: 0px;
+        }
+        
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: solid 20px   black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        O tamanho do Box é...
+    </div>
+</body>
+</html>

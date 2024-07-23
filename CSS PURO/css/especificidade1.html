@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+        /* 
+        
+            Em linhas gerais...
+
+            1 - Regra com !important
+            2 - seletores mais específicos
+            3 - última regra processada (empate)
+
+        */
+
+        .observacao {
+            background-color: aqua;         /* Segunda prioridade */
+        }
+
+        p {
+            background-color: grey!important;         /* Terceira prioridade */
+            font-size: 30px;
+            padding: 200px !important;
+            border: dashed 5px;
+        }
+
+        p.observacao {
+            background: linear-gradient(to right, red, green, grey);        /* Primeira prioridade */
+            /* essa propriedade é mt bonita */
+            padding: 5px;
+        }
+
+        /* Não existe ordem de processamento aqui, mas sim prioridade, classes possuem mais prioridade do que tags,
+        e quando você associa classe ao paragrafo como é o caso p.observacao, ele vai ter prioridade sobre os outros dois casos,
+        note que as propriedades são conflitantes e por isso existe a prioridade mas como quem definiu o font-size foi
+        o seletor que selecionou a tag 'p ele também foi aplicado, porém não ficou cinza, repare também no uso do !important
+        para dar prioridade para o padding do p, enquanto que nao deu para o background pois são propriedades diferentes:
+        background != background-color, cuidado com uso do !important, bom evitar*/
+        
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>

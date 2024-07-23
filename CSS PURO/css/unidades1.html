@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <style>
+        .unidades-absolutas {
+            position: absolute;
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px;
+            margin: 30px;
+            width: 4cm; /* Pouco usado */
+            height: 20mm; /* Pouco usado */
+            top: 150px;
+            left: 200px;
+        }
+
+        .unidades-relativas {
+            position: absolute;
+            font-size: 4em; /* Fonte relativa se relaciona com as configurações padrão do browser, se tiver setado fonte mt grande pra velho ler, a fonte no css aumenta proporcionalmente */
+            padding: 5%;
+            border: solid 1vw; /* 1vw = 1% da largura da tela da pessoa usando browser, se ela arrastar a tela, a borda vai aumentando */
+            margin: 8%;
+            width: 20vw; 
+            height: 15vh; /* 1vh = 1% da altura da tela da pessoa usando browser, se ela arrastar a tela, a altura vai aumentando */
+            bottom: 5%;
+            right: 5%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>

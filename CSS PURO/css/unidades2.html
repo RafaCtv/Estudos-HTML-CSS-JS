@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #02</title>
+    <style>
+        .fora {
+            position: relative;
+            background-color: #f5f;
+            width: 400px;
+            height: 400px;
+            padding: 50px;  
+        }
+
+        .dentro{
+            background-color: blue;
+            height: 100px;
+            width: 100%;
+            position: absolute; /*absoluto em relação ao elemento pai, isso gera algum pobremas, pq ele vai respeitar o padding mas vai sobrepor a outra div*/
+            position: fixed; /*absoluto em relação ao viewport*/    
+        }
+    </style>
+</head>
+<body>
+    <div class="fora">
+        <div class="dentro"></div>
+    </div>
+</body>
+</html>

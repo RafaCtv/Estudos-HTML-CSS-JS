@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model</title>
+    <style>
+        
+        .c1 {background-color: orange;}
+        .c2 {background-color: yellow;}
+        .c3 {background-color: green;}
+        
+        div {
+
+            float: left;
+            padding-top: 100px;
+            padding: 10px 50px 100px 150px; /* o Padding possui o mesmo comportamento do margin, podendo ser usado da mesma forma
+            e quando é escrito apenas 'padding' voce usa da exatamente da mesma forma do margin, porém ele determina dentra da box */
+            margin: 0px 20px; /* nesse caso, é bom notar que o espaçamento vertical permanece igual mas é alterado na horizontal, o mesmo
+            pode ser feito usando o padding */
+            border: solid 15px black;
+
+        }
+
+        body{font-size: 80px; margin: 0px;}
+    </style>
+</head>
+
+<body>
+    <div class="c1">1</div>
+    <div class="c2">2</div>
+    <div class="c3">3</div>
+</body>
+
+</html>

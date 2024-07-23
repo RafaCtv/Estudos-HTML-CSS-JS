@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /* * {
+            color: yellow;
+            background-color: #f77;
+        }Essa alteração altera todos os elementos, por causa do '*' */
+
+        /* .tag {
+            color: blue;
+            background-color: red;
+        }Essa altera todos elementos que utilizam a classe tag na abertura das tags (confuso) */
+
+        /* #aprovados {
+            color: blue;
+            background-color: red;
+        }Esse altera especificamente a tag ol que usa id='aprovados', note o uso de # para especificar */
+
+        /* #aninhado > div {
+            color: blue;
+            background-color: red;
+        }Nesse caso, ele vai alterar especificamente a div que está dentro da div que possui o id=aninhado,
+        vale lembrar que eu poderia ir mais a fundo e colocar #aninhado > div > section para especificar mais */
+
+        /* #aninhado section{
+            color: blue;
+            background-color: red;
+        }Nesse caso, ele produz basicamente o mesmo efeito do código acima, porém você pode especificar o elemento
+        diretamente, poderia ser #aninhado div || #aninhado span que ele iria procurar o filho mais próximo*/
+
+        /* p + ul {
+            color: blue;
+            background-color: red;
+        }Nesse caso, ele altera especificamente a ul utilizando o conceito de irmão direto, só funciona porque
+        são adjacentes, se fosse p + ol não funcionaria */
+
+        /* p ~ ol {
+            color: blue;
+            background-color: red;
+        } Nesse caso ele consegue alterar utilizando o conceito de general siblings, não precisando ser irmãos
+        adjacentes */
+
+        /* [feira] {
+            color: blue;
+            background-color: red;
+        }Aqui ele altera todos que tenham o atributo 'feira' */
+
+        /* [feira=casa] {
+            color: blue;
+            background-color: red;
+        }É possível especificar ainda mais, apontando que deve ser feita alteração apenas naquele que possuem
+        valor 'casa' no atributo feira */
+
+        /* [feira ~= escritorio] {
+            color: blue;
+            background-color: red;
+        }Nesse exemplo, ele altera qualquer um que possuir o valor escritorio no atributo feira, note o uso
+        do ~ antes do sinal de = para especificar que deve englobar mesmo caso o valor não seja especificamente
+        escritorio, pois no próprio exemplo, não existe, o valor do atributo é 'escritorio empresa' porém,
+        graças ao ~ ele sofre a alteração, mas existe um porém, os valores deve estar separados por espaços,
+        caso eles sejam declarados de outra forma, não será afetado pelas alterações de estilo */
+
+        /* section > :nth-child(odd) {
+            color: blue;
+            background-color: red;
+        }Nesse caso, ele seleciona dentro do section todos os ímpares (odd) ou pares (even), você também pode
+        especificar o número específico do elemento, porém é necessário tirar o label da section para ter o 
+        comportamento esperado */
+
+        /* section >:nth-child(odd) , ul >:nth-child(odd) {
+            color: blue;
+            background-color: red;
+        }Existem infinitas possibilidade de seletores, e esse é mais uma dela, utilize a vírgula e aplique o
+        mesmo modelo em diversas tags */
+
+        section > span:nth-of-type(1){
+            color: blue;
+            background-color: red;
+        }/* pra finalizar, vou deixar esse como funcional, basicamente ele seleciona elementos do tipo span
+        dentro da section, apenas do tipo span, como coloquei 1 ele modifica o primeiro span, se fosse dois
+        o segundo e por aí vai, de maneira específica*/
+
+        /* SEMPRE PREZE PELO CAMINHO DA SIMPLICIDADE */
+        /*      Eventualmente você vai ter que
+                recorrer a seletores mais com-
+                plexos, porém sempre preze por
+                facilitar as alterações.            */
+
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

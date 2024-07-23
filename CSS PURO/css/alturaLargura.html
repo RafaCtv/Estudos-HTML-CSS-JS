@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        html, body {height: 100%;margin: 0}
+
+        body {
+            font-size: 40px;
+            background-color: coral;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        span, div {
+            width: 49%;
+            /* height: 250px; */ 
+            height: 50%;
+            /* quando vc usa % vc sempre está usando em referencial a outra coisa, na linha acima, 50% do body, já que a div e o span estão dentro do body
+            por isso não se altera nada quando se aplica 50% nesse caso, pois a altura do body é exatamente a altura do span e da div, de todos os elementos do body,
+            logo a melhor forma de usar valores em porcentagem, é aplicando, nesse caso, o height 100% no body e height 100% na tag HTML, porque aí voce vai poder usar
+            50% nessa questão, meio que uma herança, um relacionado ao outro, mas é mais simples usar valor absoluto, na minha opinião, mas dependendo do app, provavelmente
+            vão ter valores relativos, principalmente se for de larga escala, etc porque depende do browser e outras coisas que ainda não tenho conhecimento */
+            display: inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+</body>
+
+</html>

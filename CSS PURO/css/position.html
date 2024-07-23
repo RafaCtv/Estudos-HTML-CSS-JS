@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+        .static 
+        {
+            top: 100px; /*essas propriedades não vão alterar pois o static é estático, duh*/
+            left: 1000px;
+            background-color: pink;
+        }
+        .fixed
+        {   
+            position: fixed; /*todos elementos  com essa propriedade fixed não vão acompanhar o scroll da página*/
+            bottom: 30px;
+            right: 0px;
+            background-color: mediumseagreen;
+        }
+        .relative1
+        {
+            position: relative;
+            left: 0px;
+            top: 0px; /*ao utilizar 0px de distancia no top, ele vai ficar grudado no elemento de cima, por ser relative*/
+            background-color: blueviolet; 
+        }
+        .absolute1
+        {
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: aquamarine;
+            /*por ser absoluto, ele ignora os outros elementos e usa a propria pag como referencia*/
+        }
+        .relative2
+        {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .absolute2
+        {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: whitesmoke;
+            /*os comportamentos podem variar, nesse caso, pelo absolute2 ser "filho" do relative2, ele nao vai usar as referencias da pagina e sim do pai*/
+        }
+        .sticky
+        {
+            position: -webkit-sticky;
+            position: sticky;
+            background-color: #777;
+            top: 0px; /* ao dar o scroll na pagina, quando esse valor é atingido, ele se mantém na tela nesse valor, muito parecido com os anuncios de alguns sites*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="static">Static (Padrão)</div>
+    <div class="fixed">Fixed</div>
+    <div class="relative1">Relative</div>
+    <div class="absolute1">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa</p>
+</body>
+
+</html>

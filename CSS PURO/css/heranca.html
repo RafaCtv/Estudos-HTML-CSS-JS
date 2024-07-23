@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Herança</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@100&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Ysabeau SC', sans-serif;
+            font-size: 40px;
+            border: solid 3px red; /* alguns elementos não são transmitidos por herança, como o caso da borda, mas usando a propriedade abaixo, é possível, mas não é recorrente */
+            padding: 50px; /* o padding não é transmitido por herança naturalmente */
+            margin: 100px 200px 300px 400px; 
+            /* Essa propriedade possui uma característica bem legal, existem 3 formas de definir a quantidade de pixels que se 
+            pode utilizar para alterar os elementos, a primeira é definindo apenas um valor, que vai alterar os 4 cantos da 'caixa'
+            a segunda maneira é definindo 2 valores, o primeiro valor vai alterar verticalmente e o segundo horizontalmente,
+            por fim, a terceira maneira é definir quatro valores, que vão alterar as dimensões em sentido horário, no exemplo:
+            100px = cima, 200px = direita, 300px = baixo, 400px = esquerda */
+        }
+
+        div {
+            border: inherit; /* herdando a borda do body */
+            padding: inherit; /* herdando o padding do body */
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Herança</h1>
+    <div>Estou herdando</div>
+    <p> Não herdei nada pois sou um paragrafo p, apenas as propriedades do body </p>
+</body>
+
+</html>

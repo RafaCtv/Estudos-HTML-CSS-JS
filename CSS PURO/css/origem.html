@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Origem CSS: Externo, Interno e Inline</title>
+    <style>
+        body{
+            background-color: aquamarine;}
+    </style>
+    <link rel="stylesheet" href="css/externo.css">
+    <!-- O html possui ordem de prioridade, por isso a página
+    carrega com a cor dourada, pois foi definido no arquivo .css,
+    e ele está sendo referenciado após o aquamarine, se eu mover
+    ele pra linha de código antes, o aquamarine que vai ser renderizado -->
+</head>
+
+<body style="background-color: coral;">
+    <h1>E agora?</h1>
+</body>
+
+<!-- Não é uma boa prática ficar definindo Style inline, pois ele vai ter
+prioridade sobre todas as outras definições, tente sempre deixar o css
+separado em arquivos ou definindo coisas específicas, quando for mesclar
+com JS, vão ter situações que o inline será bem vindo. A cor do body que me
+referi, dentro da tag, não consegui fazer um comentário nele então a página
+vai ficar com a cor que eu aplicar nele -->
+
+</html>
